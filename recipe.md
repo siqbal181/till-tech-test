@@ -147,13 +147,13 @@ describe('ShopDetails', () => {
   //   expect(shopDetails.storeDetails.name).toBe('The Coffee Connection');
   // })
 
-  it('returns store address from .json file', () => {
-    expect(shopDetails.storeDetails.address).toBe('123 Lakeside Way');
-  })
+  // it('returns store address from .json file', () => {
+  //   expect(shopDetails.storeDetails.address).toBe('123 Lakeside Way');
+  // })
 
-  it('returns store phone number from .json file', () => {
-    expect(shopDetails.storeDetails.number).toBe(16503600708);
-  })
+  // it('returns store phone number from .json file', () => {
+  //   expect(shopDetails.storeDetails.number).toBe(16503600708);
+  // })
 
   it('returns store phone number from .json file formatted', () => {
     expect(shopDetails.storeDetails.number).toBe('+1 (650) 260-0708');

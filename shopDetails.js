@@ -9,8 +9,18 @@ class ShopDetails {
   storeInfo() {
     const name = data[0].shopName;
     const address = data[0].address;
-    const phone = data[0].phone;
+    const phone = this.formatPhone();
     this.storeDetails.push({name, address, phone});
+  }
+
+  formatPhone() {
+    const unformattedPhone = data[0].phone;
+    const countryCode = unformattedPhone.substring(0, 1);
+    const areaCode = unformattedPhone.substring(1, 4);
+    const firstPart = unformattedPhone.substring(4, 7);
+    const secondPart = unformattedPhone.substring(7, 11);
+
+    return `+${countryCode} (${areaCode}) ${firstPart}-${secondPart}`;
   }
 
   itemPrices() {
