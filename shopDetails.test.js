@@ -12,7 +12,8 @@ describe('ShopDetails', () => {
   })
 
   it('returns store name from .json file', () => {
-    expect(shopDetails.storeInfo()).toBe('The Coffee Connection');
+    shopDetails.storeInfo();
+    expect(shopDetails.storeDetails[0]).toEqual({"address": "123 Lakeside Way", "name": "The Coffee Connection", "phone": "16503600708"});
   })
 
 })

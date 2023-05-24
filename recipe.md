@@ -143,9 +143,9 @@ describe('ShopDetails', () => {
   //   expect(shopDetails.storeDetails).toEqual([]);
   // })
 
-  it('returns store name from .json file', () => {
-    expect(shopDetails.storeDetails.name).toBe('The Coffee Connection');
-  })
+  // it('returns store name from .json file', () => {
+  //   expect(shopDetails.storeDetails.name).toBe('The Coffee Connection');
+  // })
 
   it('returns store address from .json file', () => {
     expect(shopDetails.storeDetails.address).toBe('123 Lakeside Way');
