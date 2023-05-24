@@ -4,7 +4,7 @@
 
 const data = require('./data.json');
 
-class CoffeeShop {
+class ShopDetails {
   constructor() {
     this.storeDetails = []
     this.itemPrices = []
@@ -113,29 +113,44 @@ class CustomerReceipt {
 _Create examples of the classes being used together in different situations and
 combinations that reflect the ways in which the system will be used._
 
-```ruby
-# EXAMPLE
+```javascript
 
-# Gets all tracks
-library = MusicLibrary.new
-track_1 = Track.new("Carte Blanche", "Veracocha")
-track_2 = Track.new("Synaesthesia", "The Thrillseekers")
-library.add(track_1)
-library.add(track_2)
-library.all # => [track_1, track_2]
-```
+describe('ShopDetails', () => {
+  let shopDetails;
 
-## 4. Create Examples as Unit Tests
+  beforeEach() {
+    shopDetails = new ShopDetails;
+  }
 
-_Create examples, where appropriate, of the behaviour of each relevant class at
-a more granular level of detail._
+  it('initializes with an empty this.storeDetails array', () => {
+    expect(shopDetails.storeDetails).toEqual([]);
+  })
 
-```ruby
-# EXAMPLE
+  it('returns store name from .json file', () => {
+    expect(shopDetails.storeDetails.name).toBe('The Coffee Connection');
+  })
 
-# Constructs a track
-track = Track.new("Carte Blanche", "Veracocha")
-track.title # => "Carte Blanche"
+  it('returns store address from .json file', () => {
+    expect(shopDetails.storeDetails.address).toBe('123 Lakeside Way');
+  })
+
+  it('returns store phone number from .json file', () => {
+    expect(shopDetails.storeDetails.number).toBe(16503600708);
+  })
+
+  it('returns store phone number from .json file formatted', () => {
+    expect(shopDetails.storeDetails.number).toBe('+1 (650) 260-0708');
+  })
+
+  it('returns first price and item in an array', () => {
+    expect(shopDetails.itemPrices[0]).toBe({'Cafe Latte': 4.75});
+  })
+
+  it('returns last price and item in an array', () => {
+    expect(shopDetails.itemPrices[-1]).toBe({'Muffin Of The Day': 4.55});
+  })
+})
+
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
