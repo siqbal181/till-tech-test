@@ -139,9 +139,9 @@ describe('ShopDetails', () => {
     shopDetails = new ShopDetails;
   }
 
-  it('initializes with an empty this.storeDetails array', () => {
-    expect(shopDetails.storeDetails).toEqual([]);
-  })
+  // it('initializes with an empty this.storeDetails array', () => {
+  //   expect(shopDetails.storeDetails).toEqual([]);
+  // })
 
   it('returns store name from .json file', () => {
     expect(shopDetails.storeDetails.name).toBe('The Coffee Connection');

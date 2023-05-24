@@ -6,7 +6,9 @@ class ShopDetails {
     this.itemPrices = []
   }
 
-  storeDetails() {
+  storeInfo() {
+    let name = data[0].shopName;
+    return name;
     // return the store details from .json in string
     // Store Name
     // Store Address
