@@ -25,7 +25,8 @@ class ShopDetails {
 }
 
 class CustomerOrder {
-  constructor() {
+  constructor(itemPrices) {
+    this.itemPrices = itemPrices;
     this.tableDetails = []
     this.order = []
     this.totals = []
@@ -85,25 +86,40 @@ class CustomerReceipt {
     // return Date.now
   }
 
-  formatReceipt() {
-    // Date (this.dateNow)
+  formatStoreDetails() {
     // Store Name (this.storeDetails.name)
     // ---------------
     // Address (this.storeDetails.address)
     // Phone: +1 234 3455 (this.storeDetails.number)
+  }
+
+  formatTableDetails() {
     // ---------------
     // Table: 1 / [4] (this.tableDetails.table)
     // Max, Sam (this.tableDetails.customerDetails)
     // -------------------
-    // Cafe Latte          2 x 4.75 (this.order)
-    // -------------------
-    // Tax:                this.tax
-    // Total               this.totalWithTax
-    // this.thankYou
   }
 
-  thankYou() {
+  formatOrderDetails() {
+    // Cafe Latte          2 x 4.75 (this.order)
+    // -------------------
+  }
+
+  formatOrderTotals() {
+    // Tax:                this.tax
+    // Total               this.totalWithTax
+  }
+
+  thanksMessage() {
     return "Thank you!"
+  }
+
+  formatReceipt() {
+    this.dateNow();
+    this.formatStoreDetails();
+    this.formatTableDetails();
+    this.formatOrderDetails();
+    this.thanksMessage();
   }
 }
 ```
@@ -115,6 +131,7 @@ combinations that reflect the ways in which the system will be used._
 
 ```javascript
 
+// ShopDetails class
 describe('ShopDetails', () => {
   let shopDetails;
 
@@ -150,6 +167,99 @@ describe('ShopDetails', () => {
     expect(shopDetails.itemPrices[-1]).toBe({'Muffin Of The Day': 4.55});
   })
 })
+
+// CustomerOrder class Unit Test
+describe('CustomerOrder', () => {
+  let customerOrder;
+    // mock the item prices
+  // mock the input from the customer
+
+  beforeEach() {
+    customerOrder = new CustomerOrder(mockItemPrices);
+  }
+
+  // Test for the store details being empty
+
+  it('initializes with empty details in store array', () => {
+
+  })
+
+  // Test for mocking the itemPrices
+
+  it('mocks some itemPrices', () => {
+
+  })
+
+  // Test for asking the customer table 1/4 and entering the correct table
+
+  it('asks for customer table and enters the correct table', () => {
+
+  })
+
+  // Test for asking for customer table and entering incorrect table
+
+  it('asks for customer table and enters the incorrect table', () => {
+
+  })
+
+  // Test for asking for customer name
+
+  // Test for asking for customer name and entering a number instead
+
+  // Test for asking for both customer table and customer name
+  
+  // Test for takeOrder under the OI
+
+  // Test for asking for the customers order
+  // expect(mockValue).toBe('What was the customers order')
+  // 1. 'Cafe Latte'
+  // 2. 'Flat White'
+  // expect(mockReturnedValue).toBe(2)
+  // expect(mockValue to be, what is the quantity )
+
+})
+
+// CustomerOrder Integration Test
+  // require the storeDetails 
+  // pull directly from the itemPrices of the score details
+
+
+// CustomerReceipt Unit Test
+  // mock the CustomerOrder and the StoreDetails
+
+describe('CustomerReceipt', () => {
+  let customerReceipt;
+    // mock the item prices
+  // mock the input from the customer
+
+  beforeEach() {
+    customerReceipt = new CustomerReceipt(mockStoreDetails, mockItemPrices, mockTableDetails, mockCustomerDetails, mockOrder, mockTotals);
+  }
+
+  // test the date functionality
+  it('mocks a returned date', () => {
+
+  })
+
+  // test the date functionality formatted
+  it('mocks a returned date', () => {
+
+  })
+
+
+
+
+
+
+
+
+})
+
+
+
+
+// CustomerReceipt IntegrationTest
+  // require the storeDetails and the CustomerOrder class
 
 ```
 
